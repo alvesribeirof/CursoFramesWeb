@@ -13,8 +13,11 @@ const server = express();
 //declaração da permissão de Cross Origin Request para a API
 const allowCors = require('./cors');
 
+//declaração dos recursos utilizados para a paginação
+const queryParser = require('express-query-int');
+
 //uso da urlencoded para interpretar as requisições dos formulários
-server.use(bodyParser.urlencoded({ extended: true}));
+server.use(bodyParser.urlencoded({ extended: true }));
 
 //interpretar o conteudo JSON de todas as requisições
 server.use(bodyParser.json());
@@ -22,9 +25,13 @@ server.use(bodyParser.json());
 //declarando o middleware para uso pela API
 server.use(allowCors);
 
+//declarando o middleware para uso na paginação
+server.use(queryParser());
+
+
 //declaração da escuta da porta pelo server
-server.listen(port, function () {
-  console.log(`Backend is running on port ${port}.`);
+server.listen(port, function() {
+    console.log(`Backend is running on port ${port}.`);
 });
 
 //exportando o servidor

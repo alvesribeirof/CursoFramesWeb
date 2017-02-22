@@ -1,6 +1,5 @@
 //declarando um componente chamado valueBox
 (function() {
-    //declarando um componente chamado valueBox
     angular.module('primeiraApp').component('valueBox', {
         bindings: { //definição dos parâmetros do componente
             grid: '@', //string que não se altera

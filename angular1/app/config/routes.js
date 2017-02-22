@@ -10,7 +10,7 @@
                     //de dashboard/dashboard.html jogando dentro do ui-view presente dentro do
                     //index.html
             }).state('billingCycle', {
-                url: "/billingCycles", //atualiza a url /billingCycles
+                url: "/billingCycles?page", //atualiza a url /billingCycles
                 templateUrl: "billingCycle/tabs.html" //carregar o template que ta dentro
                     //de billingCycle/tabs.html jogando dentro do ui-view presente dentro do
                     //index.html

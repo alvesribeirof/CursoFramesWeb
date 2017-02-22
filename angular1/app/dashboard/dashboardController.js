@@ -23,7 +23,7 @@
                 //constante que recebe os valores vindo da resposta da requisição
                 //através do parametro data do response
                 const { credit = 0, debt = 0 } = response.data;
-                //destruct
+                //destructured
                 vm.credit = credit; //atribuindo os valores recebidos da requisição
                 vm.debt = debt; //para a constante vm
                 vm.total = credit - debt;
