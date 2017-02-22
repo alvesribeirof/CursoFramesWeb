@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<!-- declaração do componente content-header definido no arquivo
+contentHeader.js com nome de contentHeader definida usando notação CamelCase -->
+<content-header name="Dashboard" small="Versão 1.0"></content-header>
+
+<!-- declaração do componente value-box definido no arquivo
+valueBox.js com nome de valueBox usando notação CamelCase sendo
+controlada pelo controller DashboardCtrl -->
+<section class="content" ng-controller="DashboardCtrl as dashboard">
+    <!--declaração de uma expressão do angular no value utlizando filtro: duas casas
+  decimais para a variavel crédito -->
+    <value-box grid="4" color-class="bg-green" icon-class="fa fa-bank" value="R$ {{ dashboard.credit | number: 2 }}" text="Total de Créditos"></value-box>
+    <value-box grid="4" color-class="bg-red" icon-class="fa fa-credit-card" value="R$ {{ dashboard.debt | number: 2 }}" text="Total de Débitos"></value-box>
+    <value-box grid="4" color-class="bg-blue" icon-class="fa fa-money" value="R$ {{ dashboard.total | number: 2 }}" text="Valor Consolidado"></value-box>
+</section>

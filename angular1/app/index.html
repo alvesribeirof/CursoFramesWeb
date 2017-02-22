@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<!-- ng-app informa quem vai controlar a aplicação (Singlepage Application) declarada no index.js  -->
+<html ng-app="primeiraApp">
+
+<head>
+    <meta charset="utf-8">
+    <title>Primeira App</title>
+    <link rel="stylesheet" href="/assets/css/deps.min.css">
+    <link rel="stylesheet" href="/assets/css/app.min.css">
+</head>
+
+<body class="skin-blue fixed sidebar-mini">
+    <div class="wrapper">
+        <header class="main-header" ng-include="'/template/header.html'"></header>
+        <!-- ng-include inclui um html dentro de outro html envolvidos por aspas simples e duplas -->
+        <aside class="main-sidebar" ng-include="'/template/menu.html'"></aside>
+        <!-- ng-include inclui um html dentro de outro html envolvidos por aspas simples e duplas -->
+        <div class="content-wrapper" ui-view></div>
+        <!-- ui-view responsável pela renderização das paginas dentro do content-->
+        <footer class="main-footer" ng-include="'/template/footer.html'"></footer>
+        <!-- ng-include inclui um html dentro de outro html envolvidos por aspas simples e duplas -->
+    </div>
+    <script src="/assets/js/deps.min.js"></script>
+    <script src="/assets/js/app.min.js"></script>
+</body>
+
+</html>
