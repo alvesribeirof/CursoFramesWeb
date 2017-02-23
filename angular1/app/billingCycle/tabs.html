@@ -23,6 +23,13 @@
             </li>
             <!-- ng-if: se valor for true está ativada ou vice-versa
             ng-class: faz a aba vir ativada quando clicado-->
+            <li ng-if="bcCtrl.tabView" ng-class="{active: bcCtrl.tabView}">
+                <a href data-target="#tabView" data-toggle="tab">
+                    <i class="fa fa-eye"></i> Visualizar
+                </a>
+            </li>
+            <!-- ng-if: se valor for true está ativada ou vice-versa
+            ng-class: faz a aba vir ativada quando clicado-->
             <li ng-if="bcCtrl.tabUpdate" ng-class="{active: bcCtrl.tabUpdate}">
                 <a href data-target="#tabUpdate" data-toggle="tab">
                     <i class="fa fa-pencil"></i> Alterar
@@ -41,6 +48,8 @@
             <div class="tab-pane" id="tabList" ng-include="'billingCycle/list.html'" ng-if="bcCtrl.tabList" ng-class="{active: bcCtrl.tabList }"></div>
             <!-- ng-if: se valor for true está ativada ou vice-versa; ng-class: faz a aba vir ativada quando clicado-->
             <div class="tab-pane" id="tabCreate" ng-include="'billingCycle/form.html'" ng-if="bcCtrl.tabCreate"></div>
+            <!-- ng-if: se valor for true está ativada ou vice-versa; ng-class: faz a aba vir ativada quando clicado-->
+            <div class="tab-pane" id="tabView" ng-include="'billingCycle/form.html'" ng-if="bcCtrl.tabView" ng-class="{active: bcCtrl.tabView}"></div>
             <!-- ng-if: se valor for true está ativada ou vice-versa; ng-class: faz a aba vir ativada quando clicado-->
             <div class="tab-pane" id="tabUpdate" ng-include="'billingCycle/form.html'" ng-if="bcCtrl.tabUpdate" ng-class="{active: bcCtrl.tabUpdate}"></div>
             <!-- ng-if: se valor for true está ativada ou vice-versa; ng-class: faz a aba vir ativada quando clicado-->

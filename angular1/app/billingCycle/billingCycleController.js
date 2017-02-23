@@ -20,10 +20,11 @@
         //reseta o cadastro e zera o ciclo de pagamentos
         vm.refresh = function() {
             //atribuindo a paginação para a constante page 
+            //onde se for inválido pegue por padrão a página 1
             const page = parseInt($location.search().page) || 1;
 
-            //recuperando os registros do banco de dados de 10 em 10 
-            $http.get(`${url}?skip=${(page - 1) * 10}&limit=10`).then(function(response) {
+            //recuperando os registros do banco de dados de 8 em 8
+            $http.get(`${url}?skip=${(page - 1) * 8}&limit=8`).then(function(response) {
                 vm.billingCycle = { credits: [{}], debts: [{}] }; //zerando o atributo billingCycle
                 vm.billingCycles = response.data; //resposta obtida do get feita na url que retorna um array de ciclos de pagamentos
                 vm.calculateValues(); //chamada à função de cálculos dos valores                
@@ -31,8 +32,8 @@
                 //paginando os elementos do banco
                 $http.get(`${url}/count`).then(function(response) {
                     //armazenando a quantidade de páginas que serão exibidas
-                    //através da função matematica que divide o valor por 10 e o metodo ceil arredonda o valor
-                    vm.pages = Math.ceil(response.value / 10);
+                    //através da função matematica que divide o valor por 8 e o metodo ceil arredonda o valor
+                    vm.pages = Math.ceil(response.data.value / 8);
                     tabs.show(vm, { tabList: true, tabCreate: true }); //passando os estados das abas ativadas
                 });
             });
@@ -50,6 +51,14 @@
                 msgs.addError(response.data.errors);
             });
         };
+
+        //função que recebe como parametro o objeto selecionado
+        vm.showTabView = function(billingCycle) {
+            vm.billingCycle = billingCycle; //variavel do controle recebe o parametro que form vai ler
+            vm.calculateValues(); //chamada à função de cálculos dos valores
+            tabs.show(vm, { tabView: true }); //mostrando somente a tabUpdate
+        };
+
         //função que recebe como parametro o objeto selecionado
         vm.showTabUpdate = function(billingCycle) {
             vm.billingCycle = billingCycle; //variavel do controle recebe o parametro que form vai ler
@@ -61,6 +70,14 @@
             vm.billingCycle = billingCycle; //variavel do controle recebe o parametro que form vai ler
             vm.calculateValues(); //chamada à função de cálculos dos valores
             tabs.show(vm, { tabDelete: true }); //mostrando somente a tabDelete
+        };
+
+        //função que visualiza os dados da linha selecionada
+        vm.view = function() {
+            //declarando a const que conterá a url do backend juntamente com o _id do elemento a ser visualizado
+            const viewUrl = `${url}/${vm.billingCycle._id}`;
+            //passagem de dados para a visualização com sucesso do elemento
+            $http.get(viewUrl, vm.billingCycle);
         };
 
         //função que altera os dados da linha selecionada

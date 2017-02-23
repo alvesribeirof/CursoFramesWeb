@@ -8,11 +8,13 @@
             //usando o operador destruction
             tabList = false,
             tabCreate = false,
+            tabView = false,
             tabUpdate = false,
             tabDelete = false
         }) { //corpo do método
             owner.tabList = tabList;
             owner.tabCreate = tabCreate;
+            owner.tabView = tabView;
             owner.tabUpdate = tabUpdate;
             owner.tabDelete = tabDelete;
         }

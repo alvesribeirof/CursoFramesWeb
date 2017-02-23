@@ -13,25 +13,26 @@
                     //declaração da const pages que transforma o valor recebido na url no inteiro 
                     const pages = parseInt(this.pages) || 1; //caso o valor nao foi passado o padrão será 1
 
-                    //criando o array de 5 posições e atrinuido ao pagesArray 
+                    //criando o array de 5 posições e atribuido ao pagesArray 
                     this.pagesArray = Array(pages).fill(0).map((e, i) => i + 1);
-                };
 
-                //elemento corrente recebe a pagina atual, caso nao tenha assume 1
-                this.current = parseInt($location.search().page) || 1;
 
-                //caso exista mais de uma página mostre o paginador
-                this.needPagination = this.pages > 1;
+                    //elemento corrente recebe a pagina atual, caso nao tenha assume 1
+                    this.current = parseInt($location.search().page) || 1;
 
-                //caso exista mais de uma página mostre o botao anterior
-                this.hasPrev = this.current > 1;
+                    //caso exista mais de uma página mostre o paginador
+                    this.needPagination = this.pages > 1;
 
-                //caso já esteja na ultima página não mostre o botão proximo
-                this.hasNext = this.current < this.pages;
+                    //caso a pagina corrente seja maior que um mostre o botao anterior
+                    this.hasPrev = this.current > 1;
 
-                //verifica se o elemento i é o elemento atual ou não 
-                this.isCurrent = function(i) {
-                    return this.current == i; //retorna true ou false
+                    //caso a página corrente seja menor que a quantidade de páginas
+                    this.hasNext = this.current < this.pages;
+
+                    //verifica se o elemento i é o elemento atual ou não 
+                    this.isCurrent = function(i) {
+                        return this.current == i; //retorna true ou false
+                    };
                 };
 
             }
