@@ -6,19 +6,19 @@ const mongoose = restful.mongoose;
 
 //Mapeamento de como será armazenado o credito no mongodb
 const creditSchema = new mongoose.Schema({
-    name: { type: String, required: false },
-    value: { type: Number, min: 0, required: false }
+    name: { type: String, required: [false, 'Informe o Nome do Crédito!'] },
+    value: { type: Number, min: 0, required: [false, 'Informe o valor do Crédito!'] }
 });
 
 //Mapeamento de como será armazenado o debito no mongodb
 const debtSchema = new mongoose.Schema({
-    name: { type: String, required: false },
+    name: { type: String, required: [false, 'Informe o nome do Débito!'] },
     value: { type: Number, min: 0, required: [false, 'Informe o valor do débito!'] },
     status: {
         type: String,
-        required: false,
+        required: [false, 'Informe o Status do débito!'],
         uppercase: false,
-        enum: ['PAGO', 'PENDENTE', 'AGENDADO', 'CANCELADO']
+        enum: ['PAGO', 'PENDENTE', 'AGENDADO']
     }
 });
 

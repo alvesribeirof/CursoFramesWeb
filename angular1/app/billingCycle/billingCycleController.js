@@ -63,6 +63,7 @@
         vm.showTabUpdate = function(billingCycle) {
             vm.billingCycle = billingCycle; //variavel do controle recebe o parametro que form vai ler
             vm.calculateValues(); //chamada à função de cálculos dos valores
+            console.log(vm.billingCycle);
             tabs.show(vm, { tabUpdate: true }); //mostrando somente a tabUpdate
         };
         //função que recebe como parametro o objeto selecionado

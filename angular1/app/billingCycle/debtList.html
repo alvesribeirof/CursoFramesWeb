@@ -19,7 +19,12 @@
                     <input ng-model="debt.value" class="form-control" placeholder="Informe o Valor" ng-change="bcCtrl.calculateValues()" ng-readonly="bcCtrl.tabDelete || bcCtrl.tabView" type="number" />
                 </td>
                 <td>
-                    <input ng-model="debt.status" class="form-control" placeholder="Informe o Status" ng-readonly="bcCtrl.tabDelete || bcCtrl.tabView" />
+                    <select ng-model="debt.status" class="form-control" ng-disabled="bcCtrl.tabDelete || bcCtrl.tabView">
+                       <option value="">Informe o Status</option>
+                       <option value="PAGO">PAGO</option>
+                       <option value="PENDENTE">PENDENTE</option>
+                       <option value="AGENDADO">AGENDADO</option>
+                    </select>
                 </td>
                 <td class="table-actions">
                     <button class="btn btn-success" ng-disabled="bcCtrl.tabDelete || bcCtrl.tabView" ng-click="bcCtrl.addDebt($index)">
