@@ -14,9 +14,14 @@
                 templateUrl: "billingCycle/tabs.html" //carregar o template que ta dentro
                     //de billingCycle/tabs.html jogando dentro do ui-view presente dentro do
                     //index.html
+            }).state('admin', {
+                url: "/admin", //atualiza a url /admin
+                templateUrl: "admin/login.html" //carregar o template que ta dentro
+                    //de admin/login.html jogando dentro do ui-view presente dentro do
+                    //index.html
             });
 
-            $urlRouterProvider.otherwise('/dashboard'); //estado padrão caso não encontre
+            $urlRouterProvider.otherwise('/admin'); //estado padrão caso não encontre
             //os estados
         }
     ]);
