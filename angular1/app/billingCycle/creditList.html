@@ -12,10 +12,10 @@
         <tbody>
             <tr ng-repeat="credit in bcCtrl.billingCycle.credits">
                 <td>
-                    <input ng-model="credit.name" class="form-control" placeholder="Informe o Nome" ng-readonly="bcCtrl.tabDelete || bcCtrl.tabView" />
+                    <input ng-model="credit.name" class="form-control" placeholder="Informe o nome" ng-readonly="bcCtrl.tabDelete || bcCtrl.tabView" />
                 </td>
                 <td>
-                    <input ng-model="credit.value" class="form-control" placeholder="Informe o Valor" ng-change="bcCtrl.calculateValues()" ng-readonly="bcCtrl.tabDelete || bcCtrl.tabView" type="number" />
+                    <input ng-model="credit.value" class="form-control" placeholder="Informe o valor" ng-change="bcCtrl.calculateValues()" ng-readonly="bcCtrl.tabDelete || bcCtrl.tabView" type="number" />
                 </td>
                 <td class="table-actions">
                     <button class="btn btn-success" ng-disabled="bcCtrl.tabDelete || bcCtrl.tabView" ng-click="bcCtrl.addCredit($index)">
