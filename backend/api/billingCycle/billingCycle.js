@@ -24,9 +24,9 @@ const debtSchema = new mongoose.Schema({
 
 //Mapeamento do schema do ciclo de pagamento e validação dos atributos
 const billingCycleSchema = new mongoose.Schema({
-    name: { type: String, required: true },
-    month: { type: Number, min: 1, max: 12, required: true },
-    year: { type: Number, min: 1970, max: 2500, required: true },
+    name: { type: String, required: [true, 'Informe o Nome!'] },
+    month: { type: Number, min: 1, max: 12, required: [true, 'Informe o Mês!'] },
+    year: { type: Number, min: 1970, max: 2500, required: [true, 'Informe o Ano!'] },
     credits: [creditSchema], //array de créditos apontando para o esquema do créditos
     debts: [debtSchema] //array de débitos apontando para o esquema do débitos
 });
