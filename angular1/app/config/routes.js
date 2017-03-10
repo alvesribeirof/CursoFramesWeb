@@ -13,11 +13,7 @@
                 url: "/billingCycles?page", //atualiza a url /billingCycles
                 templateUrl: "billingCycle/tabs.html" //carregar o template que ta dentro
                     //de billingCycle/tabs.html jogando dentro do ui-view presente dentro do
-<<<<<<< HEAD
                     //index.html            
-=======
-                    //index.html
->>>>>>> origin/master
             });
 
             $urlRouterProvider.otherwise('/dashboard'); //estado padrão caso não encontre
