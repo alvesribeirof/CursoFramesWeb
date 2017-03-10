@@ -13,17 +13,17 @@
         <tbody>
             <tr ng-repeat="debt in bcCtrl.billingCycle.debts">
                 <td>
-                    <input ng-model="debt.name" class="form-control" placeholder="Informe o nome" ng-readonly="bcCtrl.tabDelete || bcCtrl.tabView" />
+                    <input ng-model="debt.name" class="form-control" placeholder="Informe o Nome" ng-readonly="bcCtrl.tabDelete || bcCtrl.tabView" />
                 </td>
                 <td>
-                    <input ng-model="debt.value" class="form-control" placeholder="Informe o valor" ng-change="bcCtrl.calculateValues()" ng-readonly="bcCtrl.tabDelete || bcCtrl.tabView" type="number" />
+                    <input ng-model="debt.value" class="form-control" placeholder="Informe o Valor" ng-change="bcCtrl.calculateValues()" ng-readonly="bcCtrl.tabDelete || bcCtrl.tabView" type="number" />
                 </td>
                 <td>
                     <select ng-model="debt.status" class="form-control" ng-disabled="bcCtrl.tabDelete || bcCtrl.tabView">
-                       <option value="">Informe o status</option>
-                       <option value="AGENDADO">AGENDADO</option>
+                       <option value="">Informe o Status</option>
                        <option value="PAGO">PAGO</option>
                        <option value="PENDENTE">PENDENTE</option>
+                       <option value="AGENDADO">AGENDADO</option>
                     </select>
                 </td>
                 <td class="table-actions">
