@@ -9,17 +9,15 @@
   "author": "Fábio Alves",
   "license": "ISC",
   "dependencies": {
-    "body-parser": "^1.16.0",
-    "express": "^4.14.1",
+    "body-parser": "^1.20.4",
+    "express": "^4.21.2",
     "express-query-int": "^1.0.1",
-    "lodash": "^4.17.4",
-    "mongoose": "^4.8.1",
-    "mongoose-paginate": "^5.0.3",
-    "node-restful": "^0.2.5",
-    "pm2": "^2.4.0"
+    "lodash": "^4.17.21",
+    "mongoose": "^8.19.1"
   },
   "devDependencies": {
-    "nodemon": "^1.11.0"
+    "nodemon": "^3.1.10",
+    "pm2": "^6.0.14"
   },
   "description": ""
 }

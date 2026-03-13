@@ -1,8 +1,5 @@
-//modulo para expor a api para a aplicação
-const restful = require('node-restful');
-
 //manipulação do banco de dados mongodb
-const mongoose = restful.mongoose;
+const mongoose = require('mongoose');
 
 //Mapeamento de como será armazenado o credito no mongodb
 const creditSchema = new mongoose.Schema({
@@ -32,4 +29,4 @@ const billingCycleSchema = new mongoose.Schema({
 });
 
 //exportando o model BillingCycle do schema billingCycleSchema
-module.exports = restful.model('BillingCycle', billingCycleSchema);
+module.exports = mongoose.model('BillingCycle', billingCycleSchema);
